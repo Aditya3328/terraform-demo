@@ -19,7 +19,7 @@ resource "aws_instance" "example" {
   }
     
   
-  provisioner "remote-exec" {
+  provisioner "local-exec" {
     inline = [
       "echo ${aws_instance.example.public_ip} > /inventory"
     ]
