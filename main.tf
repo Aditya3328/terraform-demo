@@ -21,6 +21,7 @@ resource "aws_instance" "example" {
   provisioner "remote-exec" {
     inline = [
       "echo 'Hello, World!' > /tmp/hello.txt"
+      "echo ${aws_instance.example.public_ip} > /public_ip.txt"
     ]
   }
   
