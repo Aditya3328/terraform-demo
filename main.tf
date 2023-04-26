@@ -1,7 +1,6 @@
 provider "aws" {
   region = "ap-south-1" // set the AWS region you want to use
-  access_key = "AKIAQDUXA2NV5WMUKPP7"
-  secret_key = "1H6Yq4nHI/vFaY9/hwsnXDTmGqsBqtaQHM5oF9CH"
+  
 }
 
 resource "aws_instance" "example" {
@@ -10,5 +9,8 @@ resource "aws_instance" "example" {
   key_name      = "AssignmentKey" // set the name of the key pair you want to use to SSH into the instance
   tags = {
     Name = "demo-instance" // set a name for the instance
+  }
+    provisioner "local-exec" {
+        command = " echo ${aws_instance.example.public_ip} > inventory "
   }
 }
