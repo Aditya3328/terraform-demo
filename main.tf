@@ -17,8 +17,11 @@ resource "aws_instance" "example" {
   tags = {
     Name = "demo-instance" // set a name for the instance
   }
-    provisioner "local-exec" {
-        command = " echo ${aws_instance.example.public_ip} > inventory "
-        
+    
+  
+  provisioner "remote-exec" {
+    inline = [
+      "echo ${aws_instance.example.public_ip} > /inventory"
+    ]
   }
 }
