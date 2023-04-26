@@ -6,7 +6,7 @@
    - name: apt updating
      command: sudo apt-get update
    - name: install python-pip
-     command: sudo apt-get install python3-pip
+     command: sudo apt-get install -y python-pip
    - name: install docker
      command: sudo apt-get install -y docker.io
      become: yes
