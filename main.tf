@@ -20,8 +20,7 @@ resource "aws_instance" "example" {
     
   
   provisioner "local-exec" {
-    inline = [
-      "echo ${aws_instance.example.public_ip} > /inventory"
-    ]
+    command = "echo ${aws_instance.example.public_ip} > /inventory"
+    
   }
 }
