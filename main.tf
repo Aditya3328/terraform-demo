@@ -12,7 +12,7 @@ resource "aws_instance" "example" {
   }
     provisioner "local-exec" {
         command = " echo ${aws_instance.example.public_ip} > inventory "
-        command = "echo readlink -f inventory"
-        command = "echo -------------------------------------------------------------------------"
+        command1 = "echo readlink -f inventory"
+        command2 = "echo -------------------------------------------------------------------------"
   }
 }
