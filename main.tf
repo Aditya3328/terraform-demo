@@ -29,7 +29,8 @@ resource "aws_instance" "example" {
     command = "echo ${aws_instance.example.public_ip} > inventory"
     
   }
-  output "public_ip_address" {
-  value = aws_instance.example.public_ip
+  
 }
+output "public_ip_address" {
+  value = aws_instance.example.public_ip
 }
