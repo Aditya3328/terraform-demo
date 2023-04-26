@@ -16,4 +16,4 @@
      become: yes
      become_user: root
    - name: Deploy the image form dockerhub and run as container
-     command: docker run -itd -p 8090:8085 aditya3328/finance-me:latest
+     command: docker run -itd -p 8080:8080 aditya3328/finance-me:latest
